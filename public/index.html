@@ -8,11 +8,16 @@
     <title>Google Sign-In Demo</title>
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="855165260533-3muchd68jth01djk4biqjokcuivtkjve.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="855165260533-dlfkqhvebpnbd498h6oopiu265go0vpl.apps.googleusercontent.com">
+
 </head>
 
 <body>
+
+
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+
     <a href="#" onclick="signOut();">Sign out</a>
     <script>
         function signOut() {
@@ -23,6 +28,7 @@
         }
     </script>
 
+
     <script>
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
@@ -30,7 +36,11 @@
             console.log('Name: ' + profile.getName());
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+
             var id_token = googleUser.getAuthResponse().id_token;
+
+            console.log(id_token);
 
 
             var xhr = new XMLHttpRequest();
@@ -40,8 +50,10 @@
                 console.log('Signed in as: ' + xhr.responseText);
             };
             xhr.send('idtoken=' + id_token);
+
         }
     </script>
+
 </body>
 
 </html>
