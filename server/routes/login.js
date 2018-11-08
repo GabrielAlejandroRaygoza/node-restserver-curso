@@ -103,13 +103,13 @@ app.post('/google', async(req, res) => {
         } else {
             //Si el usuario no existe en la base de datos
             let usuarioDB = new Usuario();
-            usuario.nombre = googleUser.nombre;
-            usuario.email = googleUser.email;
-            usuario.img = googleUser.img;
-            usuario.google = googleUser.true;
-            usuario.password = ':)';
+            usuarioDB.nombre = googleUser.nombre;
+            usuarioDB.email = googleUser.email;
+            usuarioDB.img = googleUser.img;
+            usuarioDB.google = googleUser.true;
+            usuarioDB.password = ':)';
 
-            usuario.save((err, usuarioDB) => {
+            usuarioDB.save((err, usuarioDB) => {
                 if (err) {
                     return res.status(500).json({
                         ok: false,
