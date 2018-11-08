@@ -21,7 +21,7 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 // Configuración global de rutas
 app.use(require('./routes/index'));
 
-
+console.log(process.env);
 
 mongoose.connect(process.env.URLDB, (err, res) => {
 
