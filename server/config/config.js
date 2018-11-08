@@ -7,7 +7,7 @@ process.env.PORT = process.env.PORT || 3000;
 // ============================
 //  Entorno
 // ============================
-process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
+process.env.DEV = process.env.DEV || 'dev';
 
 
 // ============================
@@ -30,10 +30,10 @@ process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo';
 // ============================
 let urlDB;
 
-if (process.env.NODE_ENV === 'dev') {
+if (process.env.DEV === 'dev') {
     urlDB = 'mongodb://localhost:27017/cafe';
 } else {
-    urlDB = process.env.MONGO_URI;
+    urlDB = process.env.MONGODB;
 }
 process.env.URLDB = urlDB;
 
